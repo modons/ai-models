@@ -102,15 +102,21 @@ class FileInput:
 
     @cached_property
     def fields_sfc(self):
-        return cml.load_source("file", self.file).sel(levtype="sfc")
+        return cml.load_source("file", self.file+'_sfc.grib').sel(levtype="sfc")
+#        return cml.load_source("file", self.file).sel(levtype="sfc")
 
     @cached_property
     def fields_pl(self):
-        return cml.load_source("file", self.file).sel(levtype="pl")
+        return cml.load_source("file", self.file+'_pl.grib').sel(levtype="pl")
+#        return cml.load_source("file", self.file).sel(levtype="pl")
 
     @cached_property
     def all_fields(self):
-        return cml.load_source("file", self.file)
+        return self.fields_sfc + self.fields_pl
+
+#    @cached_property
+#    def all_fields(self):
+#        return cml.load_source("file", self.file)
 
 
 class FileOutput:
