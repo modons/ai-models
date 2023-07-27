@@ -136,6 +136,13 @@ def main():
     )
 
     parser.add_argument(
+        "--out_nsteps",
+        type=int,
+        default=1,
+        help="Panguweather output time step in number of model steps defined by dt. Defaults to 1.",
+    )
+
+    parser.add_argument(
         "--model-version",
         default="latest",
         help="Model version",
