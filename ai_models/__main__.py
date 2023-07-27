@@ -129,6 +129,13 @@ def main():
     )
 
     parser.add_argument(
+        "--dt",
+        type=int,
+        default=6,
+        help="Panguweather time step in hours (24, or 6). Defaults is 6.",
+    )
+
+    parser.add_argument(
         "--model-version",
         default="latest",
         help="Model version",
